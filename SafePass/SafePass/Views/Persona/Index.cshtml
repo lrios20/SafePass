@@ -15,9 +15,7 @@
             </div>
         </div>
         <div class="col-md-6" style="margin-top:2rem;">
-            <ul class="list-group" id="loadData">
-              
-            </ul>
+            <ul class="list-group" id="loadData"></ul>
         </div>
     </div>
 </div>
@@ -42,7 +40,7 @@
 
                 if (data !== "error") {
                     var item = $.parseJSON(JSON.stringify(data));
-              
+
                     if (item.length === 0) {
                         ulPersona.empty();
                         el += '<li class="list-group-item" style="text-align:center;"><label style="font-size: 16px;" class="label label-warning">No se encontro a la Persona</label></li>';
@@ -57,13 +55,13 @@
                                 + '<li class="list-group-item">' + x.celular + '</li>';
                             ulPersona.html(el);
                             console.log("excelente se encontro");
-                        });                
+                        });
                     }
                 } else {
                     ulPersona.empty();
                     el += '<li class="list-group-item" style="text-align:center;"><label style="font-size: 16px;" class="label label-warning">No se encontro a la Persona</label></li>';
                     ulPersona.html(el);
-                    console.log("No se encontro a esta persona");                      
+                    console.log("No se encontro a esta persona");
                     //console.log("error");
                 }
             },
@@ -72,26 +70,5 @@
                 alert('Error!!');
             }
         });
-        @*$.ajax({
-            type: 'GET',
-            url: '@Url.Action("GetPersonaValidation", "Persona")',
-            //async: false,
-            content: "application/json",
-            //dataType: "json",
-            data: JSON.stringify(data),
-            success: function (data) {
-                if (data !== "error") {
-                    $.each(data, function (index, data) {
-                        console.log("nombre es " + data.nombres);
-                    });
-                } else {
-                    console.log("error");
-                }
-
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                alert('Error!!');
-            }
-        });*@
     });
 </script>
